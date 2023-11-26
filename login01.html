@@ -1,0 +1,122 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>User Login Form</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+</head>
+<style>
+    body {
+        margin: 0px;
+        padding: 0px;
+        background-image: url('static/Screenshot (942)_cleanup.png');
+        background-repeat: repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+        height: 2056px;
+    }
+
+    .container h2 {
+        position: absolute;
+        left: 1070px;
+        top: 160px;
+    }
+
+    #email {
+        width: 350px;
+        border-radius: 30px;
+        padding: 25px;
+        position: absolute;
+        left: 950px;
+        top: 223px;
+        background-color: #F0F0F0;
+    }
+
+    #password {
+        width: 350px;
+        border-radius: 30px;
+        padding: 25px;
+        position: absolute;
+        left: 950px;
+        top: 295px;
+        background-color: #F0F0F0;
+    }
+
+    #btn {
+        width: 150px;
+        position: absolute;
+        left: 1050;
+        top: 390px;
+        padding: 15px;
+        border-radius: 30px;
+    }
+
+    #main01 {
+        color: aliceblue;
+        font-size: 25px;
+        position: absolute;
+        top: 57px;
+        left: 418px;
+    }
+
+    #main02 {
+        color: aliceblue;
+        font-size: 20px;
+        position: absolute;
+        top: 97px;
+        left: 338px;
+    }
+
+    #btn01 {
+        width: 150px;
+        padding: 15px;
+        border-radius: 30px;
+        position: absolute;
+        top: 140px;
+        left: 410px;
+        border-color: aliceblue;
+        border-width: 2px;
+    }
+
+    #btn01 :any-link {
+        color: white;
+        background-color: transparent;
+        text-decoration: none;
+    }
+
+    #main03 {
+        position: absolute;
+        top: 355px;
+        left: 1030px;
+    }
+
+    #main03 :any-link {
+        color: black;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h2><strong>Sign in</strong></h2>
+        <form action="{{ url_for('login01a') }}" method="post">
+            {% if mesage is defined and mesage %}
+            <div class="alert alert-warning">{{ mesage }}</div>
+            {% endif %}
+            <div class="form-group">
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" name="email">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" id="password" name="password" placeholder="Enter password"
+                    name="pswd">
+            </div>
+            <button type="submit" class="btn btn-primary" id="btn">Login</button>
+            <div id="main01" class="bottom"><strong> New Here ? </strong></div>
+            <div id="main02" class="bottom">Manage Your Placement Data Easly ...</div>
+            <button id="btn01" class="btn btn-primary"><a class="bottom" href="{{url_for('register01')}}"> Register
+                    here</a></button>
+        </form>
+    </div>
+</body>
+
+</html>

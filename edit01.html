@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        margin: 0px;
+        padding: 0px;
+        background-color: #F4F4F4;
+        /* background-size: 100% 100%; */
+        height: 3056px;
+    }
+
+    .header {
+        height: 90px;
+        background-color: #201C3C;
+    }
+
+    .left {
+        color: aliceblue;
+        font-size: 30px;
+        position: absolute;
+        left: 20px;
+        top: 30px;
+    }
+
+    .right {
+        position: absolute;
+        top: -10px;
+        left: 735px;
+    }
+
+    .navbar ul {
+        overflow: auto;
+    }
+
+    .navbar li {
+        float: left;
+        list-style: none;
+        margin: 13px 20px;
+        font-size: 20px;
+
+    }
+
+    .navbar li a {
+        padding: 13px 13px;
+        text-decoration: none;
+        color: white;
+    }
+
+
+    .navbar li a:hover {
+        color: white;
+        background-color: #EB843A;
+        border-radius: 30px;
+    }
+
+    .dropbtn {
+        visibility: collapse;
+    }
+
+    #right1 {
+        position: absolute;
+        top: 20px;
+        left: 1355px;
+        border-radius: 30px;
+        background-color: #EB843A;
+        color: #F4F4F4;
+        padding: 13px 13px;
+        font-size: 20px;
+    }
+
+    #GSButton {
+        border: none;
+        text-decoration: none;
+        background-color: #EB843A;
+        cursor: pointer;
+    }
+
+    #form {
+        position: absolute;
+        top: 150px;
+        left: 1000px;
+    }
+
+    .field {
+        width: 300px;
+        height: 30px;
+    }
+
+    #main01 {
+        position: absolute;
+        top: 150px;
+        left: 80px;
+    }
+
+
+    /* #email {
+        width: 350px;
+        border-radius: 30px;
+        padding: 25px;
+        position: absolute;
+        left: 950px;
+        top: 223px;
+        background-color: #F0F0F0;
+    } */
+</style>
+
+<body>
+
+    <header>
+        <div class="header">
+            <div class="left">Placenet</div>
+        </div>
+
+        <div class="right">
+            <nav class="navbar">
+                <ul>
+                    <div><button onclick="myFunction()" class="dropbtn" id="menubtn">Menu</button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <!-- <li><a href="#" class="active"></a></li> -->
+                            <li><a href="#main1">Home</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#main4">Contact Us</a></li>
+                        </div>
+                    </div>
+                </ul>
+            </nav>
+        </div>
+
+        <div id="right1">
+            <a href="#"><button id="GSButton">GET Started</button></a>
+        </div>
+        </div>
+    </header>
+    <div id="main01"><img src="static\Our-Placements.png"></div>
+    <br>
+    <br>
+    <div id="form">
+        <form action="{{ url_for('edit') }}" method="post">
+            <label for="email" id="att1">Email</label>
+            <div><input type="email" name="email" id="email" class="field"></div>
+
+            <label for="branch" id="att1">Branch</label>
+            <div><input type="text" name="branch" id="branch" class="field"></div>
+
+            <label for="roll no" id="att1">Roll No: </label>
+            <div><input type="text" name="roll no" id="roll no" class="field"></div>
+
+            <label for="10th Percentage" id="att1">10th Percentage : </label>
+            <div><input type="text" name="10th Percentage" id="10th Percentage" class="field"></div>
+
+            <label for="12th Percentage" id="att1">12th Percentage : </label>
+            <div><input type="text" name="12th Percentage" id="12th Percentage" class="field"></div>
+
+            <label for="CGPA" id="att1">CGPA : </label>
+            <div><input type="text" name="CGPA" id="CGPA" class="field"></div>
+
+            <label for="Attendence" id="att1">Attendence </label>
+            <div><input type="text" name="Attendence" id="Attendence" class="field"></div>
+
+            <br>
+            <br>
+
+            <button type="submit" class="btn btn-primary">Update Info</button>
+        </form>
+    </div>
+</body>
+
+</html>

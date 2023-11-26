@@ -1,0 +1,218 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>User Account</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+</head>
+<style>
+    body {
+        margin: 0px;
+        padding: 0px;
+        background-color: #F4F4F4;
+        /* background-size: 100% 100%; */
+        height: 3056px;
+    }
+
+    .header {
+        height: 90px;
+        background-color: #201C3C;
+    }
+
+    .left {
+        color: aliceblue;
+        font-size: 30px;
+        position: absolute;
+        left: 20px;
+        top: 30px;
+    }
+
+    .right {
+        position: absolute;
+        top: -10px;
+        left: 735px;
+    }
+
+    .navbar ul {
+        overflow: auto;
+    }
+
+    .navbar li {
+        float: left;
+        list-style: none;
+        margin: 13px 20px;
+        font-size: 20px;
+
+    }
+
+    .navbar li a {
+        padding: 13px 13px;
+        text-decoration: none;
+        color: white;
+    }
+
+
+    .navbar li a:hover {
+        color: white;
+        background-color: #EB843A;
+        border-radius: 30px;
+    }
+
+    .dropbtn {
+        visibility: collapse;
+    }
+
+    #right1 {
+        position: absolute;
+        top: 20px;
+        left: 1355px;
+        border-radius: 30px;
+        background-color: #EB843A;
+        color: #F4F4F4;
+        padding: 13px 13px;
+        font-size: 20px;
+    }
+
+    #GSButton {
+        border: none;
+        text-decoration: none;
+        background-color: #EB843A;
+        cursor: pointer;
+    }
+
+    #main01 {
+        position: absolute;
+        top: 400px;
+        left: 200px;
+    }
+
+    #main02 {
+        position: absolute;
+        top: 400px;
+        left: 500px;
+    }
+
+    #main03 {
+        position: absolute;
+        top: 400px;
+        left: 800px;
+    }
+
+    #main04 {
+        position: absolute;
+        top: 400px;
+        left: 1100px;
+    }
+</style>
+
+<body>
+    <header>
+        <div class="header">
+            <div class="left">Placenet</div>
+        </div>
+
+        <div class="right">
+            <nav class="navbar">
+                <ul>
+                    <div><button onclick="myFunction()" class="dropbtn" id="menubtn">Menu</button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <!-- <li><a href="#" class="active"></a></li> -->
+                            <li><a href="#main1">Home</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#main4">Contact Us</a></li>
+                        </div>
+                    </div>
+                </ul>
+            </nav>
+        </div>
+
+        <div id="right1">
+            <a href="#"><button id="GSButton">GET Started</button></a>
+        </div>
+        </div>
+    </header>
+    <br>
+    <br>
+    <div class="container">
+        <div class="row">
+            <h1>User Profile</h1>
+        </div>
+        <br>
+        <div class="row">
+            Logged in : <strong>{{session['name']}} | {{d}}<a href="{{ url_for('logout') }}"> Logout</a>
+        </div>
+        <br><br>
+        <div class="row">
+
+            <h2>Welcome to the user profile page...</h2>
+
+        </div>
+        <div id="main01">
+
+            <form action="{{ url_for('search01') }}" method="post">
+
+
+                <label for="search01" id="att1">Search Using Branch</label>
+                <div><input type="text" name="search01" id="seaarch01"></div>
+                <br>
+
+                <button type="submit" class="btn btn-primary">Search</button>
+            </form>
+
+        </div>
+
+        <div id="main02">
+
+            <form action="{{ url_for('search01') }}" method="post">
+
+
+                <label for="search01" id="att1">Search Using CGPA</label>
+                <div><input type="text" name="search01" id="seaarch01"></div>
+                <br>
+
+                <button type="submit" class="btn btn-primary">Search</button>
+            </form>
+
+        </div>
+
+        <div id="main03">
+
+            <form action="{{ url_for('search01') }}" method="post">
+
+
+                <label for="search01" id="att1">Search Enrollment Number</label>
+                <div><input type="text" name="search01" id="seaarch01"></div>
+                <br>
+
+                <button type="submit" class="btn btn-primary">Search</button>
+            </form>
+
+        </div>
+
+        <div id="main04">
+
+            <form action="{{ url_for('search01') }}" method="post">
+
+
+                <label for="search01" id="att1">Search Using 12th Marks</label>
+                <div><input type="text" name="search01" id="seaarch01"></div>
+                <br>
+
+                <button type="submit" class="btn btn-primary">Search</button>
+            </form>
+
+        </div>
+        <!-- <table>
+            {% for row in result %}
+            <tr>
+                <td>{{ row["name"] }}</td>
+                <td>{{ row["email"] }}</td>
+            </tr>
+            {% endfor %}
+        </table> -->
+    </div>
+</body>
+
+</html>
